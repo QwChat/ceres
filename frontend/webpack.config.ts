@@ -48,15 +48,9 @@ export const webpackConfig: webpack.Configuration = {
         use: [
           {
             loader: "awesome-typescript-loader",
-            options: {
-              useBabel: true
-            }
+            options: { }
           }
         ]
-      },
-      {
-        test: /\.jsx?$/,
-        use: ["babel-loader"]
       },
       {
         test: /\.scss$/,
