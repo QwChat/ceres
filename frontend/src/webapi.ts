@@ -1,7 +1,7 @@
 import axios from "axios";
 
 function getAPIurl(method: string) {
-    const HOST = "192.168.110.236:8080";
+    const HOST = "127.0.0.1:8080";
     return  `//${HOST}/api/${method}`.toLocaleLowerCase()
 }
 
