@@ -1,0 +1,63 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.2.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.5'
+    }
+}
+
+ext {
+    protobufVersion = "3.5.1"
+}
+
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'com.google.protobuf'
+
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+configure (allprojects) {
+    group = 'com.github.qwchat.ceres'
+    version = '0.0.1-SNAPSHOT'
+
+    apply plugin: 'java'
+
+    compileJava {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+        options.encoding = "UTF-8"
+    }
+}
+
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-data-rest')
+
+    compile('org.springframework.boot:spring-boot-starter-web')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    compile ('com.fasterxml.jackson.core:jackson-databind')
+
+    compile group: 'com.google.protobuf', name: 'protobuf-java', version: "${protobufVersion}"
+
+    compile group: 'com.googlecode.protobuf-java-format', name: 'protobuf-java-format', version: '1.4'
+
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:${protobufVersion}"
+        generatedFilesBaseDir = "$projectDir/src"
+    }
+}

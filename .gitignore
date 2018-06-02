@@ -88,3 +88,11 @@ hs_err_pid*
 
 
 # End of https://www.gitignore.io/api/java
+.idea
+backend/.gitignore
+
+backend/gradle/
+backend/gradlew
+backend/gradlew.bat
+*.iml
+
