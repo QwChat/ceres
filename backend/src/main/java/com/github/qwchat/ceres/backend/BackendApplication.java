@@ -5,7 +5,6 @@ import com.github.qwchat.ceres.backend.repository.UserInfoRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.converter.protobuf.ProtobufHttpMessageConverter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,10 +16,6 @@ public class BackendApplication {
 		SpringApplication.run(BackendApplication.class, args);
 	}
 
-	@Bean
-    ProtobufHttpMessageConverter protobufHttpMessageConverter() {
-	    return new ProtobufHttpMessageConverter();
-    }
 
     @Bean
     UserInfoRepository userInfoRepository() {
@@ -44,4 +39,5 @@ public class BackendApplication {
 
 	    return userInfoRepository;
     }
+
 }

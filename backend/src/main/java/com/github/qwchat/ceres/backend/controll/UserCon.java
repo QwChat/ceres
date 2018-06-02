@@ -22,13 +22,13 @@ import java.util.Optional;
  * @since 0.0.1
  */
 @RestController
-@RequestMapping(value = "/user/", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@RequestMapping(value = "/api/user.user/", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class UserCon {
 
     @Resource
     private UserInfoRepository userInfoRepository;
 
-    @PostMapping(value = "regist")
+    @PostMapping(value = "register")
     public RegisterResponse regist(@RequestBody RegisterRequest registerRequest) {
         UserInfoDomain userInfoDomain = convert(registerRequest);
         String userId = userInfoRepository.insert(userInfoDomain);
