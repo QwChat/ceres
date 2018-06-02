@@ -1,7 +1,8 @@
 syntax = "proto3";
 
-option java_package = "com.github.qwchat.ceres.backend.domain";
-option java_outer_classname = "Ceres";
+option java_package = "com.github.qwchat.ceres.backend.dto";
+option java_outer_classname = "OuterUser";
+option java_multiple_files = true;
 
 package user;
 
@@ -24,7 +25,7 @@ message RegisterRequest {
 
 message RegisterResponse {
     CommonResult result = 1;
-    int32 userId = 2;
+    string userId = 2;
 }
 
 message LoginRequest {
