@@ -95,4 +95,8 @@ backend/gradle/
 backend/gradlew
 backend/gradlew.bat
 *.iml
+.gradle
+out
+build
+
 

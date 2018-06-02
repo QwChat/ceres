@@ -23,8 +23,14 @@ import java.util.Optional;
  */
 @RestController
 @RequestMapping(value = "/api/user.user/", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-public class UserCon {
+public class UserCon<S, T> {
 
+    private T convert(S s) {
+        T t = null;
+        
+        return t;
+    }
+    
     @Resource
     private UserInfoRepository userInfoRepository;
 
