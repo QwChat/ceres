@@ -1,10 +1,15 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Register } from "./../services/user"
+import { Register, Login } from "./../services/user"
 
 Register({
-  nickname: "陈欢",
+  nickname: "chenhuan",
+  password: "123456"
+})
+
+Login({
+  nickname: "chenhuan",
   password: "123456"
 })
 
